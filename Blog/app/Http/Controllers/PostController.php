@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('post.index');
     }
 
     /**
@@ -81,5 +81,11 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+
+    public function blog()
+    {
+
+        return view('post.blog');
     }
 }

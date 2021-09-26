@@ -1,3 +1,9 @@
+@extends('layouts.app')
+
+@section('content')
+@include('partials.log')
+<div class="mt-36">
+
 <h1 class="text-3xl text-green-500 mb-6 text-center">Completez vos informations</h1>
 <form method="POST" action="{{ route('register') }}" class="w-full max-w-sm mx-auto rounded-lg border shadow-md p-5 mb-5">
     @csrf
@@ -30,20 +36,8 @@
         <input id="password_confirmation" type="password" name="password_confirmation" class="shadow border rounded w-full p-2" value="{{ old('password_confirmation') }}" autocomplete="password_confirmation" placeholder="Retapez votre mot de passe" autofocus>
     </div>
 
-    <p for="role-select" class="font-semibold text-gray-700">Je veux être :</p>
-    <div class="flex justify-between items-center">
-        <label for="freelance">Freelance
-            <input type="radio" value="1" id="freelance" name="role_id">
-            <span class="checkmark"></span>
-        </label>
-        <label for="client">Client
-            <input type="radio" value="2" id="client" name="role_id">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    @error('role_id')
-        <span class="text-red-400 text-sm block">{{ $message }}</span>
-    @enderror
-
     <button type="submit" class="bg-green-500 text-white hover:bg-green-700 transition ease-in-out duration-500 rounded-md shadow-md w-full block px-4 py-2 mt-3">Créer mon compte</button>
 </form>
+</div>
+
+@endsection
