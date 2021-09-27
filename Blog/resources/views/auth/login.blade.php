@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@include('partials.log')
-<div class="mt-10">
 <h1 class="text-3xl text-green-500 mb-6 text-center">Se connecter</h1>
 <form method="POST" action="{{ route('login') }}" class="w-full max-w-sm mx-auto rounded-lg border shadow-md p-5 mb-5">
     @csrf
@@ -27,5 +25,4 @@
 
     <button type="submit" class="bg-green-500 text-white hover:bg-green-700 transition ease-in-out duration-500 rounded-md shadow-md w-full block px-4 py-2 mt-3">Se connecter</button>
 </form>
-</div>
 @endsection

@@ -24,7 +24,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.form');
     }
 
     /**
@@ -85,7 +85,9 @@ class PostController extends Controller
 
     public function blog()
     {
-
-        return view('post.blog');
+        $posts = Post::with('categorie')->get();
+        return view('post.blog',[
+            'posts'=>$posts
+        ]);
     }
 }
